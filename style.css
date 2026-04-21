@@ -1,0 +1,311 @@
+/* ─── Reset & Base ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ─── Page Wrapper ─────────────────────────────────────── */
+.page-wrapper {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ─── Card ─────────────────────────────────────────────── */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+/* ─── Brand / Logo Block ───────────────────────────────── */
+.brand { text-align: center; margin-bottom: 32px; }
+.brand-icon { font-size: 48px; margin-bottom: 8px; }
+.brand h1 { font-size: 26px; color: #1a1a2e; font-weight: 700; }
+.brand .subtitle { color: #6b7280; font-size: 14px; margin-top: 4px; }
+
+/* ─── Form Elements ────────────────────────────────────── */
+.form-group { margin-bottom: 20px; }
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #1f2937;
+    transition: border-color 0.2s;
+    font-family: inherit;
+    resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.15);
+}
+.char-count { font-size: 12px; color: #9ca3af; margin-top: 4px; display: block; }
+
+/* ─── Buttons ──────────────────────────────────────────── */
+.btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.btn:active { transform: translateY(0); }
+.btn-primary { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; }
+.btn-secondary { background: #f3f4f6; color: #374151; }
+.btn-full { width: 100%; display: block; }
+
+/* ─── Alerts ───────────────────────────────────────────── */
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.alert-error { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+
+/* ─── Info Text ────────────────────────────────────────── */
+.info-text {
+    text-align: center;
+    font-size: 13px;
+    color: #9ca3af;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+/* ─── Dashboard Card ───────────────────────────────────── */
+.card-header { margin-bottom: 28px; }
+.card-header h2 { font-size: 22px; color: #1a1a2e; }
+.card-header p { color: #6b7280; margin-top: 4px; }
+
+/* ─── Option Cards (interview type) ───────────────────── */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.option-card { cursor: pointer; }
+.option-card input[type="radio"] { display: none; }
+.option-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    transition: all 0.2s;
+    text-align: center;
+}
+.option-icon { font-size: 28px; margin-bottom: 6px; }
+.option-title { font-weight: 700; color: #1f2937; font-size: 15px; }
+.option-desc { font-size: 12px; color: #9ca3af; margin-top: 2px; }
+.option-card input:checked + .option-inner {
+    border-color: #667eea;
+    background: #f0f2ff;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.2);
+}
+.option-card:hover .option-inner { border-color: #a5b4fc; }
+
+/* ─── Difficulty Cards ─────────────────────────────────── */
+.difficulty-row { display: flex; gap: 10px; }
+.diff-card { flex: 1; cursor: pointer; }
+.diff-card input[type="radio"] { display: none; }
+.diff-inner {
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+.easy input:checked + .diff-inner   { border-color: #22c55e; background: #f0fdf4; }
+.medium input:checked + .diff-inner { border-color: #f59e0b; background: #fffbeb; }
+.hard input:checked + .diff-inner   { border-color: #ef4444; background: #fef2f2; }
+
+/* ─── Logout Link ──────────────────────────────────────── */
+.logout-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #9ca3af;
+    font-size: 13px;
+    text-decoration: none;
+}
+.logout-link:hover { color: #667eea; }
+
+/* ─── Interview Page ───────────────────────────────────── */
+.interview-topbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.badge-type { background: #ede9fe; color: #7c3aed; }
+.badge-diff { background: #fef3c7; color: #d97706; }
+.progress-text { margin-left: auto; font-size: 13px; color: #6b7280; font-weight: 600; }
+
+.progress-bar-wrapper {
+    width: 100%;
+    background: #f3f4f6;
+    border-radius: 4px;
+    height: 6px;
+    margin-bottom: 24px;
+}
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+.question-box {
+    background: #f8fafc;
+    border-left: 4px solid #667eea;
+    border-radius: 0 10px 10px 0;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+.question-label { font-size: 12px; color: #9ca3af; font-weight: 700; text-transform: uppercase; }
+.question-text { font-size: 17px; color: #1f2937; font-weight: 600; line-height: 1.5; margin-top: 4px; }
+
+.ai-note {
+    font-size: 13px;
+    color: #7c3aed;
+    background: #faf5ff;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+}
+
+/* ─── Result Page ──────────────────────────────────────── */
+.result-header { text-align: center; margin-bottom: 24px; }
+.result-header h2 { font-size: 24px; color: #1a1a2e; }
+.result-header p { color: #6b7280; margin-top: 6px; }
+
+.score-circle-wrapper { text-align: center; margin: 20px 0; }
+.score-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 6px solid;
+    flex-direction: column;
+}
+.score-high { border-color: #22c55e; color: #16a34a; }
+.score-mid  { border-color: #f59e0b; color: #d97706; }
+.score-low  { border-color: #ef4444; color: #dc2626; }
+.score-number { font-size: 36px; font-weight: 800; line-height: 1; }
+.score-max { font-size: 14px; font-weight: 600; }
+.score-label { margin-top: 8px; color: #6b7280; font-size: 14px; }
+
+.overall-feedback {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    color: #0369a1;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 16px 0 24px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.breakdown-title { font-size: 16px; color: #374151; margin-bottom: 14px; font-weight: 700; }
+
+/* ─── Answer Cards ─────────────────────────────────────── */
+.answer-card {
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+.ans-good { border-left: 4px solid #22c55e; }
+.ans-mid  { border-left: 4px solid #f59e0b; }
+.ans-poor { border-left: 4px solid #ef4444; }
+
+.ans-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+.ans-qnum { font-weight: 800; color: #374151; }
+.ans-score { font-weight: 700; color: #1f2937; margin-left: 4px; }
+.ans-sim { font-size: 12px; color: #9ca3af; }
+
+.ans-question { font-weight: 600; color: #1f2937; padding: 12px 16px 4px; font-size: 14px; }
+
+.ans-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0 16px 12px;
+}
+.ans-user, .ans-model { padding: 8px; }
+.ans-user { background: #fefce8; border-radius: 8px; }
+.ans-model { background: #f0fdf4; border-radius: 8px; }
+.ans-user strong { color: #a16207; font-size: 12px; }
+.ans-model strong { color: #15803d; font-size: 12px; }
+.ans-user p, .ans-model p { font-size: 13px; color: #374151; margin-top: 4px; line-height: 1.4; }
+
+.ans-feedback {
+    padding: 8px 16px 14px;
+    font-size: 13px;
+    color: #4b5563;
+    font-style: italic;
+}
+
+.result-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+.result-actions .btn { flex: 1; }
+
+/* ─── Responsive ───────────────────────────────────────── */
+@media (max-width: 520px) {
+    .card { padding: 20px; }
+    .card-grid { grid-template-columns: 1fr 1fr; }
+    .ans-compare { grid-template-columns: 1fr; }
+}
